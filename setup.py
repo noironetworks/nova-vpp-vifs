@@ -23,4 +23,9 @@ setuptools.setup(
     url="http://github.com/noironetworks/nova-vpp-vifs/",
     license="http://www.apache.org/licenses/LICENSE-2.0",
     description="Python library for VPP VIF plugging",
+    entry_points={
+        'os_vif': [
+            'vpp = nova_vpp_vifs.vif_plug_vpp.vpp:VppPlugin',
+        ]
+    },
 )
