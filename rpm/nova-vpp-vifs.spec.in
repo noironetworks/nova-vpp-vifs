@@ -1,7 +1,7 @@
 Name:		nova-vpp-vifs
 Version:	@VERSION@
 Release:	@RELEASE@%{?dist}
-Summary:	Python patch to Nova API
+Summary:	Python VIF plugging for Nova compute
 License:	ASL 2.0
 URL:		http://github.com/noironetworks/nova-vpp-vifs
 Source:		nova-vpp-vifs-%{version}.tar.gz
@@ -11,7 +11,7 @@ BuildRequires:	python-pbr
 BuildRequires:	python-setuptools
 
 %description
-Python library for wrapping Vector Packet Processing (VPP) C library
+Python library for VIF plugging with Vector Packet Processing (VPP) dataplane
 
 %prep
 %setup -qn nova-vpp-vifs-%{version}
