@@ -1,0 +1,33 @@
+Name:		nova-vpp-vifs
+Version:	@VERSION@
+Release:	@RELEASE@%{?dist}
+Summary:	Python patch to Nova API
+License:	ASL 2.0
+URL:		http://github.com/noironetworks/nova-vpp-vifs
+Source:		nova-vpp-vifs-%{version}.tar.gz
+BuildArch:	noarch
+BuildRequires:	python2-devel
+BuildRequires:	python-pbr
+BuildRequires:	python-setuptools
+
+%description
+Python library for wrapping Vector Packet Processing (VPP) C library
+
+%prep
+%setup -qn nova-vpp-vifs-%{version}
+rm -f requirements.txt
+
+%build
+%{__python2} setup.py build
+
+%install
+%{__python2} setup.py install -O1 --install-data / --skip-build --root %{buildroot}
+
+%files
+%doc README.rst
+%{python2_sitelib}/nova_vpp_vifs
+%{python2_sitelib}/nova_vpp_vifs-%%{version}*.egg-info
+
+%changelog
+* Mon Sep 09 2019 Thomas Bachman <bachman@noironetworks.com> - 1.0.0-1
+- Initial release 

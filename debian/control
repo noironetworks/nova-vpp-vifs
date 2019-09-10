@@ -1,0 +1,15 @@
+Source: nova-vpp-vifs
+Section: python
+Priority: optional
+Maintainer: Cisco Systems, Inc. <nova-vpp-vifs@noironetworks.com>
+Build-Depends: debhelper (>= 9), python-setuptools (>= 3.3), python-all (>= 2.7)
+Standards-Version: 3.9.5
+Homepage: http://github.com/noironetworks/nova-vpp-vifs/
+Vcs-Git: git://github.com/noironetworks/nova-vpp-vifs.git
+Vcs-Browser: http://github.com/noironetworks/nova-vpp-vifs/
+
+Package: python-nova-vpp-vifs
+Architecture: all
+Depends: ${misc:Depends}, ${python:Depends}
+Description: Python library for plugging VPP VIFs
+ Library for plugging VPP VIFs
